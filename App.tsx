@@ -1,5 +1,10 @@
+import 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
+
 import React from 'react';
-import AppLoading from 'expo-app-loading'
+import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
 
 import {
@@ -8,6 +13,9 @@ import {
   Poppins_500Medium,
   Poppins_700Bold
 } from '@expo-google-fonts/poppins'
+
+import { NavigationContainer } from '@react-navigation/native';
+import { AppRoutes } from './src/routes/app.routes';
 
 import theme from './src/global/styles/theme';
 
@@ -24,8 +32,12 @@ export default function App(): JSX.Element {
     return <AppLoading/>
   }
   return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
     <ThemeProvider theme={theme}>
-     <Register />
+      <NavigationContainer>
+        <AppRoutes />
+      </NavigationContainer>  
      </ThemeProvider>  
+     </GestureHandlerRootView>
   )
 }
