@@ -6,6 +6,11 @@ import { getStatusBarHeight, getBottomSpace } from 'react-native-iphone-x-helper
 import { BorderlessButton } from 'react-native-gesture-handler';
 
 import { DataListProps } from '.';
+import { ReactNode } from 'react';
+
+type LogoutButonProps = {
+    children: ReactNode
+}
 
 export const Container = styled.View`
     flex: 1;
@@ -63,7 +68,7 @@ export const UserName = styled.Text`
     font-family: ${({ theme }) => theme.fonts.bold};
 `;
 
-export const LougoutButton = styled(BorderlessButton)`
+export const LougoutButton = styled(BorderlessButton)<LogoutButonProps>`
 `;
 
 export const Icon = styled(Feather)`
