@@ -2,6 +2,7 @@
   "expo": {
     "name": "gofinances2",
     "slug": "gofinances2",
+    "scheme": "gofinances2",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
