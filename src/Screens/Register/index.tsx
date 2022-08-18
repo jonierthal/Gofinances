@@ -30,6 +30,7 @@ import {
     Fields,
     TransactionsTypes
 } from './styles';
+import { useAuth } from '../../hooks/auth';
 
 interface FormData{
     [name: string]: any;
@@ -49,6 +50,8 @@ const schema = Yup.object().shape({
 export function Register(){
     const [transactionType, setTransactionType] = useState(''); 
     const [categoryModalOpen, setCategoryModalOpen] = useState(false);
+
+    const { user } = useAuth();
     
 
     const [category, setCategory] = useState({
@@ -98,7 +101,7 @@ export function Register(){
         }
 
         try {
-            const dataKey = '@gofinances:transactions';
+            const dataKey = `@gofinances:transactions_user:${user.id}`;
 
             const data = await AsyncStorage.getItem(dataKey); // pega os dados atuais
             const currentData = data ? JSON.parse(data) : []; //caso tenha algo no data transorma em jSON, se não tiver retorna um array vazio

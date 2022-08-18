@@ -1,3 +1,5 @@
+//rotas privadas
+
 import React from 'react';
 import { Platform } from 'react-native'; 
 import { MaterialIcons } from '@expo/vector-icons';
