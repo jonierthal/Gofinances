@@ -1,0 +1,14 @@
+React Native Testing Library:
+yarn add jest-expo --dev
+yarn add --dev @testing-library/react-native
+yarn add --dev @testing-library/jest-native
+Alterar o presete no package.json para: 
+"jest": {
+    "preset": "jest-expo",
+    "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"]
+  },
+
+A função teste recebe dois parametros = o nome do teste, e uma funão que executa algo
+test('', () => {
+    
+})
